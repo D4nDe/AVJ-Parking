@@ -1,0 +1,28 @@
+﻿@model SisEventos.Models.Vaga
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<h2>Controle de vagas</h2>
+
+<div class="evento-detail">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Estacionamento</th>
+                <th scope="col">Vagas</th>
+                <th scope="col">Valor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">@Model.Id</th>
+                <td>@Model.Estacionamento.Nome</td>
+                <td>@Model.Nome</td>
+                <td>@Model.Valor</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

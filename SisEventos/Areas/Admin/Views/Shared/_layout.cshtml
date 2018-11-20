@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - AVJ Parking</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/StyleSheet.css" />
+</head>
+<body>
+    <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Administração</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li><a asp-area="" asp-controller="Estacionamentos" asp-action="Index">Estacionamentos</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Atendimento<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">Nosso telefone</li>
+                            <li>
+                                <a>
+                                    <p>Joinville/SC (47) 3801-6000</p>
+                                </a>
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">Horário de Atendimento</li>
+                            <li>
+                                <a>
+                                    <p>Segunda à Sexta-feira das <strong>07h</strong> às <strong>02h30</strong>.</p>
+                                    Sábados das <strong>08h</strong> às <strong>21h30</strong>.
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    @if (ViewBag.User == null)
+                    {
+                        <li><a asp-area="" asp-controller="Auth" asp-action="Login">Login</a> </li>
+                    }
+                    else
+                    {
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@ViewBag.User.Nome <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a asp-area="" asp-controller="Auth" asp-action="Logout">Sair</a> </li>
+                            </ul>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <ul class="sidebar navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="/admin/clientes">Clientes</a></li>
+                <li class="nav-item"><a class="nav-link" href="/admin/financias">Finanças</a></li>
+                <li class="nav-item"><a class="nav-link" href="/admin/estacionamentos">Estacionamentos</a></li>
+                <li class="nav-item"><a class="nav-link" href="/admin/vagas">Vagas</a></li>
+                <li class="nav-item"><a class="nav-link" href="/admin/veiculos">Veiculos</a></li>
+                <li class="nav-item"><a class="nav-link" href="/admin/cupons">Cupom</a></li>
+                <li class="nav-item"><a class="nav-link" href="/admin/cursos">Cursos</a></li>
+            </ul>
+            <div class="col-md-6 ">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+            <script src="~/lib/jquery/dist/jquery.js"></script>
+            <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+            <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+            <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+            <script src="~/js/site.js"></script>
+            @RenderSection("Scripts", required: false)
+</body>
+</html>

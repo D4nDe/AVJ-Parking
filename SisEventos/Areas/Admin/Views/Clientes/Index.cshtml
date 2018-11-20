@@ -1,0 +1,36 @@
+﻿@model List<SisEventos.Models.Cliente>
+@{
+    ViewData["Title"] = "Index";
+}
+<h1>Clientes</h1>
+</br>
+<a href="/admin/clientes/create" class="btn btn-primary">Adicionar novo</a>
+</br>
+</br>
+<table class="table table-striped">
+
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Editar | Apagar</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cliente in Model)
+        {
+            <tr>
+                <td>@cliente.Id</td>
+                <td>
+                    <a asp-area="Admin" asp-controller="Clientes" asp-action="Detail" asp-route-id="@cliente.Id">
+                        @cliente.Nome
+                    </a>
+                </td>
+                <td>
+                    <a asp-area="Admin" asp-controller="Clientes" asp-action="Edit" asp-route-id="@cliente.Id">Editar</a>
+                    <a asp-area="Admin" asp-controller="Clientes" asp-action="Delete" asp-route-id="@cliente.Id">Apagar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,23 @@
+﻿@model SisEventos.Models.Financia
+@{
+    ViewData["Title"] = "Detail";
+}
+<h2>Detalhe do relátorio</h2>
+<div class="evento-detail">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Data</th>
+                <th scope="col">Total do dia:</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">@Model.Id</th>
+                <td>@Model.Dates</td>
+                <td>$ <strong>@Model.Total</strong></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,25 @@
+﻿@model SisEventos.Models.Cliente
+@{
+    ViewData["Title"] = "Detail";
+}
+<h2>Detalhe do cliente</h2>
+<div class="evento-detail">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">CPF</th>
+                <th scope="col">Endereço</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">@Model.Id</th>
+                <td>@Model.Nome</td>
+                <td>@Model.Descricao</td>
+                <td>@Model.Endereco</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

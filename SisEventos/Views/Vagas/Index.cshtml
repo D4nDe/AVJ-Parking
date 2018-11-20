@@ -1,0 +1,31 @@
+﻿@model List<SisEventos.Models.Vaga>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Estacionamentos</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Nome</td>
+            <td>Localização</td>
+            <td>Imagem</td>
+            <td>Compre aqui</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (Vaga evento in Model)
+        {
+            <tr>
+                <td>@evento.Id</td>
+                <td>@evento.Nome</td>
+                <td>@evento.Descricao</td>
+                <td><p><a class="btn btn-lg btn-success" target="_blank" href="https://pagseguro.uol.com.br/checkout/nc/cart.jhtml?s=041fe12ad9500ca5f030654518526f4c078172ff39684bbb414e1738b52477f6#rmcl" role="button">Compre aqui</a></p></td>
+            </tr>
+        }
+    </tbody>
+    
+</table>

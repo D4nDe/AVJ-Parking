@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - AVJ Parking</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/StyleSheet.css" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>AVJ Parking</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="boot.css" type="text/css" media="screen" />
+
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+
+    <script src="jquery-3.2.1.min.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <link href="justified-nav.css" rel="stylesheet">
+
+    <link href="carousel.css" rel="stylesheet">
+
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+    <script src="../../assets/js/ie8-responsive-file-warning.js"></script>
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="carousel.css" rel="stylesheet">
+
+    <script src="../../assets/js/ie8-responsive-file-warning.js"></script>
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
+
+
+</head>
+
+<body id="principal">
+
+            <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">AVJ Parking</a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                            <li><a asp-area="" asp-controller="Estacionamentos" asp-action="Index">Estacionamentos</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Atendimento<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li role="separator" class="divider"></li>
+                                    <li class="dropdown-header">Nosso telefone</li>
+                                    <li>
+                                        <a>
+                                            <p>Joinville/SC (47) 3801-6000</p>
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li class="dropdown-header">Horário de Atendimento</li>
+                                    <li>
+                                        <a>
+                                            <p>Segunda à Sexta-feira das <strong>07h</strong> às <strong>02h30</strong>.</p>
+                                            Sábados das <strong>08h</strong> às <strong>21h30</strong>.
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            @if (ViewBag.User != null)
+                            {
+                                <li><a asp-area="Admin" asp-controller="Home" asp-action="Index">Administração</a></li>
+                            }
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            @if (ViewBag.User == null)
+                            {
+                                <li><a asp-controller="Auth" asp-action="Login">Login</a> </li>
+                            }
+                            else
+                            {
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@ViewBag.User.Nome - @ViewBag.User.Email <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a asp-controller="Auth" asp-action="Logout">Sair</a> </li>
+                                    </ul>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+      
+        <div class=" et_pb_row et_pb_row_0">
+
+            <div class="container body-content">
+                <br />
+                <br />
+                @RenderBody()
+                <hr />
+  
+            </div>
+            <br />
+            <br />
+            <br />
+            <div class="rodape">
+                <p><center><img src="../../logo.png" /></center></p>
+                <center>
+                    <h1>Conte com a AVJ Parking para administrar seu estacionamento!</h1>
+                    <br />
+                    <p>A AVJ Parking gerencia áreas de estacionamento de shoppings, condomínios, terrenos, garagens em pontos estratégicos, priorizando a rentabilidade do negócio e com foco de atuação no desenvolvimento de relacionamento e proximidade com os usuários.
+                    <p>Aliamos nossa ampla experiência no segmento à busca constante por <strong>novas tecnologias para gestão, automação e meios de pagamento</strong>.
+                    <p>Oferecemos ainda consultoria para implantação de estacionamentos com o <strong>objetivo de otimizar a operação, através do fluxo de veículos e pessoas, utilização dos espaços, mobilidade urbana, entre outros aspectos</strong>. </p>
+                </center>
+
+                <br />
+                <footer>
+                    <center><p>&copy; 2018 - AVJ Parking</p></center>
+                </footer>
+            </div>
+
+        </div>
+
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        @RenderSection("Scripts", required: false)
+</body>

@@ -1,0 +1,35 @@
+﻿@model List<SisEventos.Models.Cupom>
+@{
+    ViewData["Title"] = "Index";
+}
+<h1>Cupons cadastrados</h1>
+</br>
+<a href="/admin/cupons/create" class="btn btn-primary">Adicionar novo</a>
+</br>
+</br>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Cupom</th>
+            <th>Editar | Apagar</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cupom in Model)
+        {
+            <tr>
+                <td>@cupom.Id</td>
+                <td>
+                    <a asp-area="Admin" asp-controller="cupons" asp-action="Detail" asp-route-id="@cupom.Id">
+                        @cupom.Nome
+                    </a>
+                </td>
+                <td>
+                    <a asp-area="Admin" asp-controller="cupons" asp-action="Edit" asp-route-id="@cupom.Id">Editar</a>
+                    <a asp-area="Admin" asp-controller="cupons" asp-action="Delete" asp-route-id="@cupom.Id">Apagar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

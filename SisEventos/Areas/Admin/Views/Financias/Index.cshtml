@@ -1,0 +1,35 @@
+﻿@model List<SisEventos.Models.Financia>
+@{
+    ViewData["Title"] = "Index";
+}
+<h1>Relátorio de finanças</h1>
+</br>
+<a href="/admin/financias/create" class="btn btn-primary">Adicionar novo relatorio</a>
+</br>
+</br>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Data</th>
+            <th>Editar | Apagar</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var financia in Model)
+        {
+            <tr>
+                <td>@financia.Id</td>
+                <td>
+                    <a asp-area="Admin" asp-controller="Financias" asp-action="Detail" asp-route-id="@financia.Id">
+                        @financia.Dates
+                    </a>
+                </td>
+                <td>
+                    <a asp-area="Admin" asp-controller="Financias" asp-action="Edit" asp-route-id="@financia.Id">Editar</a>
+                    <a asp-area="Admin" asp-controller="Financias" asp-action="Delete" asp-route-id="@financia.Id">Apagar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

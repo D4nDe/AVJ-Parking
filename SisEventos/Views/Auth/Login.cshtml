@@ -1,0 +1,53 @@
+﻿@model SisEventos.ViewModels.LoginVM
+@{
+    ViewData["Title"] = "Login";
+}
+<link rel="stylesheet" href="~/css/login.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!--
+<form asp-action="Login" asp-controller="Auth" method="post">
+
+        <div class="form-group">
+            <label asp-for="Email"></label>
+            <input type="email" class="form-control" asp-for="Email" />
+            <span class="text-danger" asp-validation-for="Email"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Password"></label>
+            <input type="password" class="form-control" asp-for="Password" />
+            <span class="text-danger" asp-validation-for="Password"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Entrar</button> <br />
+
+
+    </form>
+
+     -->
+<!------ Include the above in your HEAD tag ---------->
+<div class="container-fluid login-container">
+    <div class="row">
+        <div class="col-md-6 login-form-1">
+            <h3>Login</h3>
+            <form asp-action="Login" asp-controller="Auth" method="post">
+                <div class="form-group">
+                    <label asp-for="Email">Email</label>
+                    <input type="email" class="form-control" asp-for="Email" />
+                    <span class="text-danger" asp-validation-for="Email"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Password">Senha</label>
+                    <input type="password" class="form-control" asp-for="Password" />
+                    <span class="text-danger" asp-validation-for="Password"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btnSubmit btn-success" value="Entrar" />
+                </div>
+                <div class="form-group">
+                    <a href="#" class="ForgetPwd">Esqueceu a senha?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

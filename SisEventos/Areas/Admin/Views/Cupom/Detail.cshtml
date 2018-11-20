@@ -1,0 +1,25 @@
+﻿@model SisEventos.Models.Cupom
+@{
+    ViewData["Title"] = "Detail";
+}
+<h2>Cupom</h2>
+<div class="evento-detail">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Cupom</th>
+                <th scope="col">Porcentagem de desconto</th>
+                <th scope="col">Estacionamento</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">@Model.Id</th>
+                <td>@Model.Nome</td>
+                <td>@Model.Descricao</td>
+                <td>@Model.estacionamento</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

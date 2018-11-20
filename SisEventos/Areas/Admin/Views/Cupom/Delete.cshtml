@@ -1,0 +1,21 @@
+﻿@model SisEventos.Models.Cupom;
+@{
+    ViewData["Title"] = "Delete";
+}
+<h2>Apagar cupom</h2>
+<p>Tem certeza que quer apagar o cupom <strong>@Model.Nome</strong> ?</p>
+
+<form asp-controller="Cupons" asp-action="Delete" method="post">
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <a asp-area="Admin"
+               asp-controller="Cupons"
+               asp-action="Index"
+               class="btn btn-default">Cancelar</a>
+            <button type="submit"
+                    class="btn btn-danger">
+                Apagar
+            </button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,41 @@
+﻿@model List<SisEventos.Models.Estacionamento>
+@{
+    ViewData["Title"] = "Index";
+}
+<h1><center>Estacionamentos</center></h1>
+<br />
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <td><strong>Id</strong></td>
+            <td><strong>Nome</strong></td>
+            <td><strong>Localização</strong></td>
+            <td><strong>Imagem</strong></td>
+            <td><strong>Compre aqui</strong></td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Estacionamento estacionamento in Model)
+        {
+            <tr class="info">
+                <td>@estacionamento.Id</td>
+                <td>@estacionamento.Nome</td>
+                <td>@estacionamento.Descricao</td>
+                <td>
+                    <img class="img-principal-evento" src="@estacionamento.CaminhoImagem" />
+                </td>
+                <td><p><a class="btn btn-lg btn-success" target="_blank" href="https://pagseguro.uol.com.br/checkout/nc/cart.jhtml?s=041fe12ad9500ca5f030654518526f4c078172ff39684bbb414e1738b52477f6#rmcl" role="button">Compre aqui</a></p></td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+<div class="et_pb_column et_pb_column_4_4  et_pb_column_0">
+    <div class="et_pb_text et_pb_module et_pb_bg_layout_light et_pb_text_align_left  et_pb_text_0">
+        <div class="et_pb_text_inner">
+            <iframe src="https://www.google.com/maps/d/embed?mid=1k_NSw4omOxUU46-_KacQtwp4fWohYLxU" width="100%" height="480"></iframe>
+        </div>
+    </div>
+</div>

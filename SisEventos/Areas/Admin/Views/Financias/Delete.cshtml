@@ -1,0 +1,20 @@
+﻿@model SisEventos.Models.Financia;
+@{
+    ViewData["Title"] = "Delete";
+}
+<h2>Apagar relatório</h2>
+<p>Tem certeza que quer apagar o relatorio de financia <strong>@Model.Id</strong> ?</p>
+<form asp-controller="Financias" asp-action="Delete" method="post">
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <a asp-area="Admin"
+               asp-controller="Financias"
+               asp-action="Index"
+               class="btn btn-default">Cancelar</a>
+            <button type="submit"
+                    class="btn btn-danger">
+                Apagar
+            </button>
+        </div>
+    </div>
+</form>

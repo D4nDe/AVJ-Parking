@@ -1,0 +1,24 @@
+﻿@model SisEventos.Models.Estacionamento
+@{
+    ViewData["Title"] = "Detail";
+}
+<h2>Estacionamento</h2>
+<div class="evento-detail">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Localização</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">@Model.Id</th>
+                <td>@Model.Nome</td>
+                <td>@Model.Descricao</td>
+            </tr>
+        </tbody>
+    </table>
+    <img src="@Model.CaminhoImagem" />
+</div>
