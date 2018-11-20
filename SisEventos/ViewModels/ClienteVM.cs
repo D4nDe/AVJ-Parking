@@ -13,7 +13,7 @@ namespace SisEventos.ViewModels
     {
         public ClienteVM()
         {
-            this.Cursos = new List<SelectListItem>();
+            this.Veiculos = new List<SelectListItem>();
         }
 
         public long Id { get; set; }
@@ -28,14 +28,11 @@ namespace SisEventos.ViewModels
         [Display(Name = "CPF: ")]
         public string Descricao { get; set; }
 
-        [Required(ErrorMessage = "Endereço: ")]
-        [Display(Name = "Endereço: ")]
-        public string Endereco { get; set; }
+        public List<SelectListItem> Veiculos { get; set; }
 
-        [Display(Name = "Foto: ")]
-        public IFormFile Imagem { get; set; }
-
-        public List<SelectListItem> Cursos { get; set; }
+        [Display(Name = "Veiculo: ")]
+        [Required(ErrorMessage = "Veiculo:")]
+        public long IdCursoSelecionado { get; set; }
 
     }
 }

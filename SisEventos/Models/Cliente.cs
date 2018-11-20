@@ -16,14 +16,8 @@ namespace SisEventos.Models
         [Display(Name = "CPF: ")]
         public String Descricao { get; set; }
 
-        [Display(Name = "Endereço: ")]
-        public virtual Curso Curso { get; set; }
-
-        [Display(Name = "Endereço: ")]
-        public String Endereco { get; set; }
-
-        [Display(Name = "Foto: ")]
-        public String CaminhoImagem { get; set; }
+        [Display(Name = "Veiculo: ")]
+        public virtual Veiculo veiculo { get; set; }
 
     }
 }

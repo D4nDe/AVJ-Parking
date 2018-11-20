@@ -35,13 +35,13 @@ namespace SisEventos.Areas.Admin.Controllers
         {
             ClienteVM vm = new ClienteVM();
 
-            var cursos = db.Cursos.ToList();
-            foreach (var curso in cursos)
+            var veiculos = db.Veiculos.ToList();
+            foreach (var veiculo in veiculos)
             {
-                vm.Cursos.Add(new SelectListItem
+                vm.Veiculos.Add(new SelectListItem
                 {
-                    Value = curso.Id.ToString(),
-                    Text = curso.Nome
+                    Value = veiculo.Id.ToString(),
+                    Text = veiculo.Nome
                 });
             }
 
@@ -56,13 +56,21 @@ namespace SisEventos.Areas.Admin.Controllers
                 Cliente cliente = new Cliente();
                 cliente.Nome = vm.Nome;
                 cliente.Descricao = vm.Descricao;
-                cliente.Endereco = vm.Endereco;
+                cliente.veiculo = db.Veiculos.Find(vm.IdCursoSelecionado);
                 this.db.Clientes.Add(cliente);
                 this.db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-
+            var veiculos = db.Veiculos.ToList();
+            foreach (var veiculo in veiculos)
+            {
+                vm.Veiculos.Add(new SelectListItem
+                {
+                    Value = veiculo.Id.ToString(),
+                    Text = veiculo.Nome
+                });
+            }
             return View(vm);
         }
 
@@ -70,21 +78,20 @@ namespace SisEventos.Areas.Admin.Controllers
         public IActionResult Edit(long id)
         {
             Cliente cliente = this.db.Clientes
-                                   .Include(m => m.Curso)
+                                   .Include(m => m.veiculo)
                                    .Where(x => x.Id == id)
                                    .FirstOrDefault();
 
             ClienteVM vm = new ClienteVM();
             vm.Nome = cliente.Nome;
             vm.Descricao = cliente.Descricao;
-            vm.Endereco = cliente.Endereco;
-            var cursos = db.Cursos.ToList();
-            foreach (var curso in cursos)
+            var veiculos = db.Veiculos.ToList();
+            foreach (var veiculo in veiculos)
             {
-                vm.Cursos.Add(new SelectListItem
+                vm.Veiculos.Add(new SelectListItem
                 {
-                    Value = curso.Id.ToString(),
-                    Text = curso.Nome
+                    Value = veiculo.Id.ToString(),
+                    Text = veiculo.Nome
                 });
             }
 
@@ -99,7 +106,7 @@ namespace SisEventos.Areas.Admin.Controllers
                 Cliente clienteDb = this.db.Clientes.Find(id);
                 clienteDb.Nome = vm.Nome;
                 clienteDb.Descricao = vm.Descricao;
-                clienteDb.Endereco = vm.Endereco;
+                clienteDb.veiculo = db.Veiculos.Find(vm.IdCursoSelecionado);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -111,7 +118,7 @@ namespace SisEventos.Areas.Admin.Controllers
         public IActionResult Detail(long id)
         {
             Cliente cliente = this.db.Clientes
-                                  .Include(m => m.Curso)
+                                  .Include(m => m.veiculo)
                                   .Where(x => x.Id == id)
                                   .FirstOrDefault();
 
@@ -127,7 +134,7 @@ namespace SisEventos.Areas.Admin.Controllers
         public IActionResult Delete(long id)
         {
             Cliente cliente = this.db.Clientes
-                                  .Include(m => m.Curso)
+                                  .Include(m => m.veiculo)
                                   .Where(x => x.Id == id)
                                   .FirstOrDefault();
 
@@ -143,7 +150,7 @@ namespace SisEventos.Areas.Admin.Controllers
         public IActionResult Delete(long id, Cliente cliente)
         {
             Cliente clienteDb = this.db.Clientes
-                                  .Include(m => m.Curso)
+                                  .Include(m => m.veiculo)
                                   .Where(x => x.Id == id)
                                   .FirstOrDefault();
 
