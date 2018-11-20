@@ -2,9 +2,11 @@
 @{
     ViewData["Title"] = "Detail";
 }
+
+<link rel="stylesheet" href="~/css/tables.css" />
 <h2>Estacionamento</h2>
 <div class="evento-detail">
-    <table class="table table-bordered">
+    <table class="greyGridTable">
         <thead>
             <tr>
                 <th scope="col">#</th>
@@ -20,5 +22,6 @@
             </tr>
         </tbody>
     </table>
+    <br />
     <img src="@Model.CaminhoImagem" />
 </div>

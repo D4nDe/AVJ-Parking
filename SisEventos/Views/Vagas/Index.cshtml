@@ -2,10 +2,10 @@
 @{
     ViewData["Title"] = "Index";
 }
+<link rel="stylesheet" href="~/css/tables.css" />
 
 <h2>Estacionamentos</h2>
-
-<table class="table">
+<table class="greyGridTable">
     <thead>
         <tr>
             <td>Id</td>
@@ -15,7 +15,6 @@
             <td>Compre aqui</td>
         </tr>
     </thead>
-
     <tbody>
         @foreach (Vaga evento in Model)
         {
@@ -27,5 +26,5 @@
             </tr>
         }
     </tbody>
-    
+
 </table>

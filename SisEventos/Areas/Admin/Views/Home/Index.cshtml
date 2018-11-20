@@ -2,14 +2,19 @@
 @{
     ViewData["Title"] = "Index";
 }
+
+<link rel="stylesheet" href="~/css/tables.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 <h1>Estacionamentos</h1>
 <br />
 <br />
-<table class="table">
+<table class="greyGridTable">
     <thead>
         <tr>
             <td><strong>Id</strong></td>
             <td><strong>Nome</strong></td>
+            <td><strong>Endereço</strong></td>
         </tr>
     </thead>
     <tbody>
@@ -22,5 +27,7 @@
             </tr>
 
         }
+    </tbody>
+    <tbody>
     </tbody>
 </table>
