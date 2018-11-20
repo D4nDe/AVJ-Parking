@@ -1,7 +1,25 @@
-﻿
+﻿@model List<SisEventos.Models.Estacionamento>
 @{
-    ViewData["Title"] = "Home";
+    ViewData["Title"] = "Index";
 }
-
-<h1 class="page-header">Home</h1>
-
+<h1>Estacionamentos</h1>
+<br />
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <td><strong>Id</strong></td>
+            <td><strong>Nome</strong></td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Estacionamento estacionamento in Model)
+        {
+            <tr class="info">
+                <td>@estacionamento.Id</td>
+                <td>@estacionamento.Nome</td>
+                <td>@estacionamento.Descricao</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -369,3 +369,13 @@ body.sidebar-toggled footer.sticky-footer {
     background: black;
     color: white;
 }
+
+.img-principal-evento {
+    height: 100px;
+    width: 100px;
+}
+
+.img-detail {
+    height: 20px;
+    width: 20px;
+}

@@ -14,7 +14,11 @@ namespace SisEventos.Areas.Admin.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            List<Estacionamento> estacionamentos = db.Estacionamentos
+                                     .OrderByDescending(x => x.Id)
+                                     .Take(3)
+                                     .ToList();
+            return View(estacionamentos);
         }
     }
 }
