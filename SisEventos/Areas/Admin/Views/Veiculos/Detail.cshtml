@@ -15,6 +15,7 @@
                 <th scope="col">Placa</th>
                 <th scope="col">Cor</th>
                 <th scope="col">Modelo</th>
+                <th scope="col">Foto</th>
             </tr>
         </thead>
         <tbody>
@@ -23,8 +24,8 @@
                 <td>@Model.Nome</td>
                 <td>@Model.Descricao</td>
                 <td>@Model.Modelo</td>
+                <td><img class="img-estacionamento" src="@Model.CaminhoImagem" /></td>
             </tr>
         </tbody>
     </table>
-    <img src="@Model.CaminhoImagem" />
 </div>

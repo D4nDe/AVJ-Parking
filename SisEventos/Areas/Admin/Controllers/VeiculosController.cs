@@ -75,6 +75,7 @@ namespace SisEventos.Areas.Admin.Controllers
                 veiculo.Nome = vm.Nome;
                 veiculo.Descricao = vm.Descricao;
                 veiculo.Modelo = vm.Modelo;
+                veiculo.CaminhoImagem = this.UploadImagem(vm.Imagem);
                 veiculo.cliente = db.Clientes.Find(vm.IdCursoSelecionado);
                 this.db.Veiculos.Add(veiculo);
                 this.db.SaveChanges();
@@ -133,6 +134,7 @@ namespace SisEventos.Areas.Admin.Controllers
                 veiculoDb.Nome = vm.Nome;
                 veiculoDb.Descricao = vm.Descricao;
                 veiculoDb.Modelo = vm.Modelo;
+                veiculoDb.CaminhoImagem = this.UploadImagem(vm.Imagem);
                 veiculoDb.cliente = db.Clientes.Find(vm.IdCursoSelecionado);
                 db.SaveChanges();
                 return RedirectToAction("Index");
