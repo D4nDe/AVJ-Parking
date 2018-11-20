@@ -31,7 +31,6 @@ namespace SisEventos.ViewModels
         public List<SelectListItem> Veiculos { get; set; }
 
         [Display(Name = "Veiculo: ")]
-        [Required(ErrorMessage = "Veiculo:")]
         public long IdCursoSelecionado { get; set; }
 
     }
