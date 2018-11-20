@@ -16,7 +16,7 @@ namespace SisEventos.Models
         [Display(Name = "Porcentagem: ")]
         public String Descricao { get; set; }
 
-        [Display(Name = "Cliente: ")]
+        [Display(Name = "Estacionamento: ")]
         public virtual Estacionamento estacionamento { get; set; }
     }
 }

@@ -21,7 +21,7 @@ namespace SisEventos.ViewModels
         [Required(ErrorMessage = "Cupom: ")]
         [StringLength(50, MinimumLength = 5, ErrorMessage =
             "Deve ter no mínimo 5 e no máximo 50 caracteres.")]
-        [Display(Name = "Placa do veiculo")]
+        [Display(Name = "Cupom: ")]
         public string Nome { get; set; }
 
         [Required(ErrorMessage = "Porcentagem")]

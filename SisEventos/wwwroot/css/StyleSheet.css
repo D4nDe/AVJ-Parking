@@ -10,7 +10,7 @@ html {
 }
 
 body {
-    background-color: honeydew;
+    background-color: #CAE1FF;
 }
 
 #wrapper {
@@ -86,14 +86,14 @@ body.fixed-nav.sidebar-toggled #content-wrapper {
 }
 
 .navbar {
-    background-color: #212529;
+    background-color: #1C1C1C;
     margin: 0px;
 }
 
 
 .sidebar {
     width: 90px !important;
-    background-color: #212529;
+    background-color: #1C1C1C;
     min-height: calc(100vh - 56px);
 }
 
@@ -345,13 +345,27 @@ body.sidebar-toggled footer.sticky-footer {
         width: calc(100% - 90px);
     }
 }
+#corjump {
+    background-color: #CAE1FF;
+}
 .jumbotron {
     border-style: solid;
     border-width: 5px;
+}
+
+.jumbotron1 {
+    border-style: solid;
+    border-width: 5px;
+    background: #E8E8E8;
 }
 .rodape {
 }
 
 #principal {
-    background-color: honeydew;
+    background-color: #CAE1FF;
+}
+
+.btn {
+    background: black;
+    color: white;
 }

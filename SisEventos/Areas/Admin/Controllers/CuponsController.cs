@@ -24,7 +24,7 @@ namespace SisEventos.Areas.Admin.Controllers
             {
                 string extension = Path.GetExtension(formFile.FileName);
                 string fileName = $"{Guid.NewGuid().ToString()}{extension}";
-                var path = Path.Combine(env.WebRootPath, "veiculos", fileName).ToLower();
+                var path = Path.Combine(env.WebRootPath, "cupons", fileName).ToLower();
 
                 using (var fileStream = new FileStream(path, FileMode.Create))
                 {

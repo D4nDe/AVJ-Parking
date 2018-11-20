@@ -21,19 +21,19 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="Areas\Admin\Views\Cupom\Create.cshtml">
+    <Content Update="Areas\Admin\Views\Cupons\Create.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
-    <Content Update="Areas\Admin\Views\Cupom\Delete.cshtml">
+    <Content Update="Areas\Admin\Views\Cupons\Delete.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
-    <Content Update="Areas\Admin\Views\Cupom\Detail.cshtml">
+    <Content Update="Areas\Admin\Views\Cupons\Detail.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
-    <Content Update="Areas\Admin\Views\Cupom\Edit.cshtml">
+    <Content Update="Areas\Admin\Views\Cupons\Edit.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
-    <Content Update="Areas\Admin\Views\Cupom\Index.cshtml">
+    <Content Update="Areas\Admin\Views\Cupons\Index.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
     <Content Update="Areas\Admin\Views\Veiculos\Create.cshtml">

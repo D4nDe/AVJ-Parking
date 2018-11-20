@@ -1,13 +1,14 @@
 ﻿.login-container {
     margin-top: 5%;
     margin-bottom: 5%;
+    width: 500px;
+    height: 500px;
 }
 
 .login-form-1 {
     padding: 5%;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
     background-color: DodgerBlue;
-    b
 }
 
     .login-form-1 h3 {
@@ -60,4 +61,8 @@
     color: #0062cc;
     font-weight: 600;
     text-decoration: none;
+}
+.btn {
+    background: black;
+    color: white;
 }
