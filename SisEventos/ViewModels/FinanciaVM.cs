@@ -13,7 +13,7 @@ namespace SisEventos.ViewModels
     {
         public FinanciaVM()
         {
-            this.Cursos = new List<SelectListItem>();
+            this.Estacionamentos = new List<SelectListItem>();
         }
 
         public long Id { get; set; }
@@ -29,7 +29,11 @@ namespace SisEventos.ViewModels
         [Display(Name = "Foto: ")]
         public IFormFile Imagem { get; set; }
 
-        public List<SelectListItem> Cursos { get; set; }
+        public List<SelectListItem> Estacionamentos { get; set; }
+
+        [Display(Name = "Estacionamento: ")]
+        [Required(ErrorMessage = "Estacionamento")]
+        public long IdCursoSelecionado { get; set; }
 
     }
 }

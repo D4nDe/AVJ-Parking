@@ -9,6 +9,7 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Data</th>
+                <th scope="col">Estacionamento</th>
                 <th scope="col">Total do dia:</th>
             </tr>
         </thead>
@@ -16,6 +17,7 @@
             <tr>
                 <th scope="row">@Model.Id</th>
                 <td>@Model.Dates</td>
+                <td>@Model.estacionamento.Nome</td>
                 <td>$ <strong>@Model.Total</strong></td>
             </tr>
         </tbody>

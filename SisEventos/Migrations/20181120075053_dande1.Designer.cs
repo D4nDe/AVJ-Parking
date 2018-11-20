@@ -11,9 +11,10 @@ using System;
 namespace SisEventos.Migrations
 {
     [DbContext(typeof(Banco))]
-    partial class BancoModelSnapshot : ModelSnapshot
+    [Migration("20181120075053_dande1")]
+    partial class dande1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

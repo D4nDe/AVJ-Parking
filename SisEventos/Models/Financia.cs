@@ -18,8 +18,8 @@ namespace SisEventos.Models
         [Display(Name = "Total no caixa: ")]
         public string Total { get; set; }
 
-        [Display(Name = "Endereço: ")]
-        public virtual Curso Curso { get; set; }
+        [Display(Name = "Estacionamento: ")]
+        public virtual Estacionamento estacionamento { get; set; }
 
         [Display(Name = "Foto: ")]
         public String CaminhoImagem { get; set; }

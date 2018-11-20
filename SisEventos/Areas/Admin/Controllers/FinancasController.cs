@@ -35,13 +35,13 @@ namespace SisEventos.Areas.Admin.Controllers
         {
             FinanciaVM vm = new FinanciaVM();
 
-            var cursos = db.Cursos.ToList();
-            foreach (var curso in cursos)
+            var estacionamentos = db.Estacionamentos.ToList();
+            foreach (var estacionamento in estacionamentos)
             {
-                vm.Cursos.Add(new SelectListItem
+                vm.Estacionamentos.Add(new SelectListItem
                 {
-                    Value = curso.Id.ToString(),
-                    Text = curso.Nome
+                    Value = estacionamento.Id.ToString(),
+                    Text = estacionamento.Nome
                 });
             }
 
@@ -56,6 +56,7 @@ namespace SisEventos.Areas.Admin.Controllers
                 Financia financia = new Financia();
                 financia.Dates = vm.Dates;
                 financia.Total = vm.Total;
+                financia.estacionamento = db.Estacionamentos.Find(vm.IdCursoSelecionado);
                 this.db.Financias.Add(financia);
                 this.db.SaveChanges();
                 return RedirectToAction("Index");
@@ -69,20 +70,20 @@ namespace SisEventos.Areas.Admin.Controllers
         public IActionResult Edit(long id)
         {
             Financia financia = this.db.Financias
-                                   .Include(m => m.Curso)
+                                   .Include(m => m.estacionamento)
                                    .Where(x => x.Id == id)
                                    .FirstOrDefault();
 
             FinanciaVM vm = new FinanciaVM();
             vm.Dates = financia.Dates;
             vm.Total = financia.Total;
-            var cursos = db.Cursos.ToList();
-            foreach (var curso in cursos)
+            var estacionamentos = db.Estacionamentos.ToList();
+            foreach (var estacionamento in estacionamentos)
             {
-                vm.Cursos.Add(new SelectListItem
+                vm.Estacionamentos.Add(new SelectListItem
                 {
-                    Value = curso.Id.ToString(),
-                    Text = curso.Nome
+                    Value = estacionamento.Id.ToString(),
+                    Text = estacionamento.Nome
                 });
             }
 
@@ -97,6 +98,7 @@ namespace SisEventos.Areas.Admin.Controllers
                 Financia financiaDb = this.db.Financias.Find(id);
                 financiaDb.Dates = vm.Dates;
                 financiaDb.Total = vm.Total;
+                financiaDb.estacionamento = db.Estacionamentos.Find(vm.IdCursoSelecionado);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -108,7 +110,7 @@ namespace SisEventos.Areas.Admin.Controllers
         public IActionResult Detail(long id)
         {
             Financia financia = this.db.Financias
-                                  .Include(m => m.Curso)
+                                  .Include(m => m.estacionamento)
                                   .Where(x => x.Id == id)
                                   .FirstOrDefault();
 
@@ -124,7 +126,7 @@ namespace SisEventos.Areas.Admin.Controllers
         public IActionResult Delete(long id)
         {
             Financia financia = this.db.Financias
-                                  .Include(m => m.Curso)
+                                  .Include(m => m.estacionamento)
                                   .Where(x => x.Id == id)
                                   .FirstOrDefault();
 
@@ -140,7 +142,7 @@ namespace SisEventos.Areas.Admin.Controllers
         public IActionResult Delete(long id, Financia financia)
         {
             Financia financiaDb = this.db.Financias
-                                  .Include(m => m.Curso)
+                                  .Include(m => m.estacionamento)
                                   .Where(x => x.Id == id)
                                   .FirstOrDefault();
 
