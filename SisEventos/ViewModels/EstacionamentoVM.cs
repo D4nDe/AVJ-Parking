@@ -24,6 +24,7 @@ namespace SisEventos.ViewModels
         [Display(Name = "Nome do estacionamento")]
         public string Nome { get; set; }
 
+        [StringLength(100, MinimumLength = 5)]
         [Required(ErrorMessage = "Informe a localização do estacionamento")]
         [Display(Name = "Localização: ")]
         public string Descricao { get; set; }

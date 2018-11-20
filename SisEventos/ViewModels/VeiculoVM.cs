@@ -18,16 +18,18 @@ namespace SisEventos.ViewModels
 
         public long Id { get; set; }
 
-        [Required(ErrorMessage = "Placa: ")]
-        [StringLength(50, MinimumLength = 5, ErrorMessage =
-            "Deve ter no mínimo 5 e no máximo 50 caracteres.")]
+        [StringLength(20, MinimumLength = 5)]
+        [Required(ErrorMessage = "É obrigatorio")]
         [Display(Name = "Placa do veiculo")]
         public string Nome { get; set; }
 
+
+        [StringLength(15, MinimumLength = 2)]
         [Required(ErrorMessage = "Cor")]
         [Display(Name = "Cor: ")]
         public string Descricao { get; set; }
 
+        [StringLength(50, MinimumLength = 5)]
         [Required(ErrorMessage = "Modelo")]
         [Display(Name = "Modelo: ")]
         public string Modelo { get; set; }

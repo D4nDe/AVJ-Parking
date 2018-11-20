@@ -90,7 +90,7 @@ namespace SisEventos.Areas.Admin.Controllers
                     Text = curso.Nome
                 });
             }
-            
+
             return View(vm);
         }
 

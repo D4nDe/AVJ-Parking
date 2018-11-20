@@ -15,7 +15,7 @@ namespace SisEventos.ViewModels
         {
             this.Estacionamentos = new List<SelectListItem>();
         }
-        
+
         public long Id { get; set; }
 
         public List<SelectListItem> Estacionamentos { get; set; }
@@ -24,6 +24,7 @@ namespace SisEventos.ViewModels
         [Required(ErrorMessage = "Informe o estacionamento")]
         public long IdCursoSelecionado { get; set; }
 
+        [StringLength(500, MinimumLength = 1)]
         [Required(ErrorMessage = "Vagas: ")]
         [Display(Name = "Vagas: ")]
         public string Nome { get; set; }
@@ -32,6 +33,7 @@ namespace SisEventos.ViewModels
         [Display(Name = "Carro ou moto: ")]
         public string Descricao { get; set; }
 
+        [Required]
         [Display(Name = "Valor: ")]
         public string Valor { get; set; }
 

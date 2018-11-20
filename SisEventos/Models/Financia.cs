@@ -10,11 +10,12 @@ namespace SisEventos.Models
     {
         public long Id { get; set; }
 
-        [Required(ErrorMessage = "Dia/mês/ano: ")]
+        [Required]
         [Display(Name = "Dia / mês / ano: ")]
+        [DisplayFormat(DataFormatString = "Dia/mês/ano: ")]
         public string Dates { get; set; }
 
-        [Required(ErrorMessage = "Total no caixa: ")]
+        [DisplayFormat(DataFormatString = "Total no caixa: ")]
         [Display(Name = "Total no caixa: ")]
         public string Total { get; set; }
 

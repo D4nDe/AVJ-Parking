@@ -18,9 +18,11 @@ namespace SisEventos.ViewModels
 
         public long Id { get; set; }
 
-        [Required(ErrorMessage = "Dia/mês/ano: ")]
+        [Required]
         [Display(Name = "Dia / mês / ano: ")]
+        [DisplayFormat(DataFormatString = "Dia/mês/ano: ")]
         public string Dates { get; set; }
+
 
         [Required(ErrorMessage = "Total no caixa: ")]
         [Display(Name = "Total no caixa: ")]

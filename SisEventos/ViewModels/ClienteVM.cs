@@ -30,6 +30,7 @@ namespace SisEventos.ViewModels
 
         public List<SelectListItem> Veiculos { get; set; }
 
+        [Required]
         [Display(Name = "Veiculo: ")]
         public long IdCursoSelecionado { get; set; }
 
