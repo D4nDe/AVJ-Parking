@@ -22,6 +22,7 @@
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home principal</a></li>
+                    <li><a asp-area="" asp-controller="Auth" asp-action="SignUp">Cadastrar admin</a></li>
                     @if (ViewBag.User == null)
                     {
                         <li><a asp-area="" asp-controller="Auth" asp-action="Login">Login</a> </li>
