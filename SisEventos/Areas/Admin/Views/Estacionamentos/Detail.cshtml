@@ -12,6 +12,7 @@
                 <th scope="col">#</th>
                 <th scope="col">Nome</th>
                 <th scope="col">Localização</th>
+                <th scope="col">Imagem</th>
             </tr>
         </thead>
         <tbody>
@@ -19,9 +20,9 @@
                 <th scope="row">@Model.Id</th>
                 <td>@Model.Nome</td>
                 <td>@Model.Descricao</td>
+                <td><img class="img-estacionamento" src="@Model.CaminhoImagem" /></td>
             </tr>
         </tbody>
     </table>
     <br />
-    <img src="@Model.CaminhoImagem" />
 </div>
